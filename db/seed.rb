@@ -1,5 +1,6 @@
-# require('pry-byebug')
+require('pry-byebug')
 require_relative('../models/house')
+require_relative('../models/student')
 require_relative('sql_runner')
 
 house1 = House.new({'name' => 'Gryffindor', 'logo' =>'https://goo.gl/jQfTtM'})
@@ -13,6 +14,9 @@ house3.save
 
 house4 = House.new({'name' => 'Slytherin', 'logo' =>'https://goo.gl/vEe2dE'})
 house4.save
-# 
-# binding.pry
-# nil
+
+student1 = Student.new({'first_name' => 'Harry', 'last_name' => 'Potter', 'house_id' => house1.id, 'age' => 11})
+student1.save
+
+binding.pry
+nil
