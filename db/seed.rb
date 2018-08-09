@@ -13,6 +13,6 @@ house3.save
 
 house4 = House.new({'name' => 'Slytherin', 'logo' =>'https://goo.gl/vEe2dE'})
 house4.save
-
+# 
 # binding.pry
 # nil

@@ -15,4 +15,18 @@ class House
     house = SqlRunner.run(sql, values).first
     @id = house['id'].to_i()
   end
+
+  def self.find_by_id(id)
+    sql = "SELECT * FROM houses WHERE id = $1"
+    values = [id]
+    result = SqlRunner.run(sql, values).first
+    return houses = House.new(result)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM houses"
+    houses = SqlRunner.run(sql)
+    return houses.map {|house| House.new(house)}
+  end
+
 end
